@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>radios</key>
+	<array>
+		<array>
+			<dict>
+				<key>name</key>
+				<string>Cabo Mil 96.3</string>
+				<key>streamURL</key>
+				<string>http://50.7.29.178:9976/listen.pls</string>
+				<key>logoURL</key>
+				<string>https://pbs.twimg.com/profile_images/1825710489/logo_twitter.jpg</string>
+				<key>radioWebURL</key>
+				<string>http://www.cabomil.com.mx/</string>
+				<key>radioFBURL</key>
+				<string>https://www.facebook.com/cabo.mil</string>
+				<key>radioTwitter</key>
+				<string>https://twitter.com/cabomil</string>
+			</dict>
+			<dict>
+				<key>name</key>
+				<string>Radio Diferente</string>
+				<key>streamURL</key>
+				<string>http://radioevangelica2.com:8130</string>
+				<key>logoURL</key>
+				<string>http://d1i6vahw24eb07.cloudfront.net/s151353d.png</string>
+				<key>radioWebURL</key>
+				<string>http://www.radiodiferente.com/</string>
+				<key>radioFBURL</key>
+				<string>http://www.facebook.com/pages/RADIO-DIFERENTE/102328759864961</string>
+				<key>radioTwitter</key>
+				<string>https://twitter.com/radiodiferente</string>
+			</dict>
+			<dict>
+				<key>name</key>
+				<string>Contacto Los Cabos</string>
+				<key>streamURL</key>
+				<string>http://95.211.115.197:8227/listen.pls</string>
+				<key>logoURL</key>
+				<string>http://www.contactoloscabos.com/clc.jpg</string>
+				<key>radioWebURL</key>
+				<string>http://contactoloscabos.com/</string>
+				<key>radioFBURL</key>
+				<string>https://es-la.facebook.com/contactoloscabos1</string>
+				<key>radioTwitter</key>
+				<string>https://twitter.com/contactoloscabo</string>
+			</dict>
+			<dict>
+				<key>name</key>
+				<string>660 AM KVOZ Los Cabos</string>
+				<key>streamURL</key>
+				<string>http://www.kvoz.com:8080/kvoz</string>
+				<key>logoURL</key>
+				<string>http://www.brandsoftheworld.com/sites/default/files/styles/logo-thumbnail/public/0022/5272/brand.gif</string>
+				<key>radioWebURL</key>
+				<string></string>
+				<key>radioFBURL</key>
+				<string></string>
+				<key>radioTwitter</key>
+				<string></string>
+			</dict>
+		</array>
+	</array>
+	<key>names</key>
+	<array>
+		<string>Los cabos</string>
+		<string>La paz</string>
+		<string>Comundú</string>
+		<string>Loreto</string>
+		<string>Mulegé</string>
+	</array>
+	<key>weather</key>
+	<array>
+		<string>https://query.yahooapis.com/v1/public/yql?q=select%20*%20from%20weather.forecast%20where%20woeid%20in%20(select%20woeid%20from%20geo.places(1)%20where%20text%3D%22los%20cabos%22)%20and%20u%3D%27c%27&amp;format=xml&amp;env=store%3A%2F%2Fdatatables.org%2Falltableswithkeys</string>
+		<string>https://query.yahooapis.com/v1/public/yql?q=select%20*%20from%20weather.forecast%20where%20woeid%20in%20(select%20woeid%20from%20geo.places(1)%20where%20text%3D%22la%20paz%20bcs%22)%20and%20u%3D&apos;c&apos;&amp;format=xml&amp;env=store%3A%2F%2Fdatatables.org%2Falltableswithkeys</string>
+		<string>https://query.yahooapis.com/v1/public/yql?q=select%20*%20from%20weather.forecast%20where%20woeid%20in%20(select%20woeid%20from%20geo.places(1)%20where%20text%3D%22comond%C3%BA%2CMX%22)%20and%20u%3D&apos;c&apos;&amp;format=xml&amp;env=store%3A%2F%2Fdatatables.org%2Falltableswithkeys</string>
+		<string>https://query.yahooapis.com/v1/public/yql?q=select%20*%20from%20weather.forecast%20where%20woeid%20in%20(select%20woeid%20from%20geo.places(1)%20where%20text%3D%22loreto%20mexico%22)%20and%20u%3D&apos;c&apos;&amp;format=xml&amp;env=store%3A%2F%2Fdatatables.org%2Falltableswithkeys</string>
+		<string>https://query.yahooapis.com/v1/public/yql?q=select%20*%20from%20weather.forecast%20where%20woeid%20in%20(select%20woeid%20from%20geo.places(1)%20where%20text%3D%22Mulege%20mexico%22)%20and%20u%3D&apos;c&apos;&amp;format=xml&amp;env=store%3A%2F%2Fdatatables.org%2Falltableswithkeys</string>
+	</array>
+</dict>
+</plist>
