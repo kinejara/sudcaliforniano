@@ -81,7 +81,6 @@
 - (void)settingPins {
     
     NSArray *municipioList = @[@"Los Cabos", @"La Paz", @"Comundú", @"Loreto", @"Mulegé"];
-    
     NSArray *latitudList = [[NSArray alloc] initWithObjects:@22.875958,@24.116468,@25.0481538,@27.2563,@26.00897,nil];
     //NSArray *long_arr = [[NSArray alloc] initWithObjects:@-109.894674,@-110.3032952,@-111.6622957,@-112.3395998,@-111.3499563,nil];
     NSArray *longitudList = @[@-109.894674,@-110.3032952,@-111.6622957,@-112.3395998,@-111.3499563];
@@ -98,10 +97,9 @@
         thumbnail.image = [UIImage imageNamed:[NSString stringWithFormat:@"%@",[thumbs_arr objectAtIndex:idx]]];
         
         CLLocationCoordinate2D pinCoordinate;
-        pinCoordinate.latitude = [[lat_arr objectAtIndex:idx] floatValue];
-        pinCoordinate.longitude = [[longitudList objectAtIndex:idx] floatValue];
         thumbnail.coordinate = pinCoordinate;
-        
+        pinCoordinate.latitude = [[latitudList objectAtIndex:idx] floatValue];
+        pinCoordinate.longitude = [[longitudList objectAtIndex:idx] floatValue];
         [_GSSMapView addAnnotation:[GSSMapAnnotation annotationWithMapThumbnail:thumbnail]];
         
     }];
