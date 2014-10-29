@@ -94,8 +94,8 @@
     //24.327304, -110.269671
     NSArray *municipio_arr = @[@"Los Cabos", @"La Paz", @"Comundú", @"Loreto", @"Mulegé"];
     NSArray *lat_arr = [[NSArray alloc] initWithObjects:@22.875958,@24.116468,@25.0481538,@27.2563,@26.00897,nil];
-    NSArray *long_arr = [[NSArray alloc] initWithObjects:@-109.894674,@-110.3032952,@-111.6622957,@-112.3395998,@-111.3499563,nil];
-    
+    //NSArray *long_arr = [[NSArray alloc] initWithObjects:@-109.894674,@-110.3032952,@-111.6622957,@-112.3395998,@-111.3499563,nil];
+    NSArray *longitudList = @[@-109.894674,@-110.3032952,@-111.6622957,@-112.3395998,@-111.3499563];
     
     NSArray *subt_arr = [[NSArray alloc] initWithObjects:@"sub1",@"sub2",@"sub3",@"sub4",@"sub5",nil];
     NSArray *thumbs_arr = [[NSArray alloc] initWithObjects:@"icon_cabos.png",@"icon_lapaz.png",@"icon_comondu",@"icon_cabos.png",@"icon_cabos.png", nil];
