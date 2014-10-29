@@ -102,6 +102,8 @@
         pinCoordinate.longitude = [[longitudList objectAtIndex:idx] floatValue];
         [_GSSMapView addAnnotation:[GSSMapAnnotation annotationWithMapThumbnail:thumbnail]];
         //JORGE
+        
+        //KINE
     }];
 }
 
