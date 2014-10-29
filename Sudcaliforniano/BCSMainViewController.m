@@ -101,7 +101,7 @@
         pinCoordinate.latitude = [[latitudList objectAtIndex:idx] floatValue];
         pinCoordinate.longitude = [[longitudList objectAtIndex:idx] floatValue];
         [_GSSMapView addAnnotation:[GSSMapAnnotation annotationWithMapThumbnail:thumbnail]];
-        //add this comment just to create a conflict
+        //JORGE
     }];
 }
 
