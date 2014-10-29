@@ -104,6 +104,10 @@
     }];
 }
 
+-(void)countOne {
+    int i = 1;
+}
+
 
 - (void)customizeNavigationBar {
     UIBarButtonItem *closeButton = [[UIBarButtonItem alloc] initWithTitle:@"X" style:UIBarButtonItemStylePlain target:self action:@selector(pickMunicipio)];
