@@ -18,10 +18,8 @@
 
 @property (nonatomic, weak) IBOutlet MKMapView *GSSMapView;
 @property (nonatomic, weak) IBOutlet UILabel *temperatureLabel;
-
 @property (nonatomic) NSInteger municipioID;
 @property (nonatomic,strong) UIActionSheet *municipioActionSheet;
-
 @property (nonatomic,strong)Weather *weather;
 @property (nonatomic,strong)ModelView *modelView;
 
@@ -29,19 +27,13 @@
 @end
 
 
-@implementation BCSMainViewController {
+@implementation BCSMainViewController
 
-
-}
 #pragma mark Initialization
 
-
 -(id)init {
-
     if(self = [super initWithNibName:@"View" bundle:[NSBundle mainBundle]]) {
-    
     }
-    
     return self;
 }
 
@@ -59,16 +51,14 @@
     
     [self customizeNavigationBar];
     [self performSelector:@selector(settingUpMap) withObject:nil afterDelay:1.0];
-    
 }
 
-- (void)didReceiveMemoryWarning
-{
+- (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
+    //from branch to merge in develop
 }
 
--(void)settingUpMap {
-    
+- (void)settingUpMap {
     //set up cordinator
     MKCoordinateRegion region;
     MKCoordinateSpan span;
@@ -86,10 +76,9 @@
     [_GSSMapView setRegion:region animated:YES];
     
     [self settingPins];
-    
 }
 
--(void)settingPins {
+- (void)settingPins {
     
     //24.327304, -110.269671
     NSArray *municipio_arr = [[NSArray alloc] initWithObjects:@"Los Cabos",@"La Paz",@"Comundú",@"Loreto",@"Mulegé", nil];
@@ -111,19 +100,16 @@
         
         CLLocationCoordinate2D pinCoordinate;
         pinCoordinate.latitude = [[lat_arr objectAtIndex:idx] floatValue];
-        pinCoordinate.longitude = [[long_arr objectAtIndex:idx] floatValue];
+        pinCoordinate.longitude = [[longitudList objectAtIndex:idx] floatValue];
         thumbnail.coordinate = pinCoordinate;
         
         [_GSSMapView addAnnotation:[GSSMapAnnotation annotationWithMapThumbnail:thumbnail]];
         
     }];
-    
 }
 
 
--(void)customizeNavigationBar {
-    
-    
+- (void)customizeNavigationBar {
     UIBarButtonItem *closeButton = [[UIBarButtonItem alloc] initWithTitle:@"X" style:UIBarButtonItemStylePlain target:self action:@selector(pickMunicipio)];
     
     self.navigationItem.rightBarButtonItem = closeButton;
@@ -133,14 +119,14 @@
 }
 
 
--(void)municipioNameForNavigationBar:(NSInteger)municipioID {
+- (void)municipioNameForNavigationBar:(NSInteger)municipioID {
     
     self.navigationItem.title = [self.modelView nameForMunicipioId:municipioID];
 }
 
 //TODO:blockskit
 //when u need a reference to something that you want to use multime time
--(UIActionSheet*)municipioActionSheet {
+- (UIActionSheet *)municipioActionSheet {
     
     if(!_municipioActionSheet) {
         
@@ -155,7 +141,7 @@
     return _municipioActionSheet;
 }
 
--(Weather*)weather{
+- (Weather *)weather{
     
     if(!_weather) {
         _weather = [[Weather alloc] init];
@@ -164,7 +150,7 @@
     return _weather;
 }
 
--(NSInteger)municipioID {
+- (NSInteger)municipioID {
 
     if(!_municipioID) {
         _municipioID = [[NSUserDefaults standardUserDefaults] integerForKey:@"municipioID"];
@@ -189,19 +175,19 @@
 }
 
 
--(void)pickMunicipio {
+- (void)pickMunicipio {
 
     [self.municipioActionSheet showInView:self.view];
 }
 
--(IBAction)callRadioStation:(id)sender {
+- (IBAction)callRadioStation:(id)sender {
     
     RadioViewController *radioView = [[RadioViewController alloc] initWithMunicipioID:self.municipioID];
     [self.navigationController pushViewController:radioView animated:YES];
     
 }
 
--(IBAction)callFeedNew:(id)sender {
+- (IBAction)callFeedNew:(id)sender {
     
     //FeedViewController *radioView = [[FeedViewController alloc] initWithMunicipioID:self.municipioID];
     //[self.navigationController pushViewController:radioView animated:YES];
@@ -213,20 +199,15 @@
 
 - (void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex
 {
-    
-    
     [self municipioIdChangeWithId:buttonIndex];
-    
-    
 }
 
 
--(void)municipioIdChangeWithId:(NSInteger)municipioIndex {
+- (void)municipioIdChangeWithId:(NSInteger)municipioIndex {
 
     NSInteger municipioStoreId = [[NSUserDefaults standardUserDefaults] integerForKey:@"municipioID"];
     
     if(municipioIndex != municipioStoreId) {
-        
         //
         [[NSUserDefaults standardUserDefaults] setInteger:municipioIndex forKey:@"municipioID"];
         [[NSUserDefaults standardUserDefaults] synchronize];
@@ -237,7 +218,7 @@
 
 }
 
--(void)textForWeaterLabelbyMunicipioId:(NSInteger)municipioID {
+- (void)textForWeaterLabelbyMunicipioId:(NSInteger)municipioID {
 
     __weak typeof(self) weakSelf = self;
     
@@ -248,7 +229,6 @@
     } andOnFailure:^(NSError *error) {
         //TODO:display error alert
     }];
-    
 }
 
 
