@@ -80,7 +80,6 @@
 
 - (void)settingPins {
     
-    //24.327304, -110.269671
     NSArray *municipioList = @[@"Los Cabos", @"La Paz", @"Comundú", @"Loreto", @"Mulegé"];
     
     NSArray *latitudList = [[NSArray alloc] initWithObjects:@22.875958,@24.116468,@25.0481538,@27.2563,@26.00897,nil];
