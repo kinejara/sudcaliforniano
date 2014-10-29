@@ -82,7 +82,6 @@
     
     //24.327304, -110.269671
     NSArray *municipioList = @[@"Los Cabos", @"La Paz", @"Comundú", @"Loreto", @"Mulegé"];
-    
     NSArray *lat_arr = [[NSArray alloc] initWithObjects:@22.875958,@24.116468,@25.0481538,@27.2563,@26.00897,nil];
     //NSArray *long_arr = [[NSArray alloc] initWithObjects:@-109.894674,@-110.3032952,@-111.6622957,@-112.3395998,@-111.3499563,nil];
     NSArray *longitudList = @[@-109.894674,@-110.3032952,@-111.6622957,@-112.3395998,@-111.3499563];
@@ -101,7 +100,7 @@
         
         CLLocationCoordinate2D pinCoordinate;
         pinCoordinate.latitude = [[lat_arr objectAtIndex:idx] floatValue];
-        pinCoordinate.longitude = [[longitudList objectAtIndex:idx] floatValue];
+        pinCoordinate.longitude = [longitudList[idx] floatValue];
         thumbnail.coordinate = pinCoordinate;
         
         [_GSSMapView addAnnotation:[GSSMapAnnotation annotationWithMapThumbnail:thumbnail]];
