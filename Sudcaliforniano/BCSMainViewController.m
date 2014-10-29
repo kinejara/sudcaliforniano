@@ -80,13 +80,12 @@
 
 - (void)settingPins {
     
-    //24.327304, -110.269671
     NSArray *municipioList = @[@"Los Cabos", @"La Paz", @"Comundú", @"Loreto", @"Mulegé"];
-    NSArray *lat_arr = [[NSArray alloc] initWithObjects:@22.875958,@24.116468,@25.0481538,@27.2563,@26.00897,nil];
+    
+    NSArray *latitudList = [[NSArray alloc] initWithObjects:@22.875958,@24.116468,@25.0481538,@27.2563,@26.00897,nil];
     //NSArray *long_arr = [[NSArray alloc] initWithObjects:@-109.894674,@-110.3032952,@-111.6622957,@-112.3395998,@-111.3499563,nil];
     NSArray *longitudList = @[@-109.894674,@-110.3032952,@-111.6622957,@-112.3395998,@-111.3499563];
-    
-    NSArray *subt_arr = [[NSArray alloc] initWithObjects:@"sub1",@"sub2",@"sub3",@"sub4",@"sub5",nil];
+    NSArray *subtList = @[@"sub1", @"sub2", @"sub3", @"sub4", @"sub5"];
     NSArray *thumbs_arr = [[NSArray alloc] initWithObjects:@"icon_cabos.png",@"icon_lapaz.png",@"icon_comondu",@"icon_cabos.png",@"icon_cabos.png", nil];
     
     [municipioList enumerateObjectsUsingBlock:^(NSString *str, NSUInteger idx, BOOL *stop) {
@@ -94,13 +93,13 @@
         GSSMapThumbnail *thumbnail = [[GSSMapThumbnail alloc] init];
         
         thumbnail.title = [NSString stringWithFormat:@"%@",str];
-        thumbnail.subtitle = [NSString stringWithFormat:@"%@",[subt_arr objectAtIndex:idx]];
+        thumbnail.subtitle = [NSString stringWithFormat:@"%@",[subtList objectAtIndex:idx]];
         thumbnail.disclosureBlock = ^{ NSLog(@"municipio"); };
         thumbnail.image = [UIImage imageNamed:[NSString stringWithFormat:@"%@",[thumbs_arr objectAtIndex:idx]]];
         
         CLLocationCoordinate2D pinCoordinate;
         pinCoordinate.latitude = [[lat_arr objectAtIndex:idx] floatValue];
-        pinCoordinate.longitude = [longitudList[idx] floatValue];
+        pinCoordinate.longitude = [[longitudList objectAtIndex:idx] floatValue];
         thumbnail.coordinate = pinCoordinate;
         
         [_GSSMapView addAnnotation:[GSSMapAnnotation annotationWithMapThumbnail:thumbnail]];
