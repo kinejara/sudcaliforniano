@@ -95,16 +95,12 @@
         thumbnail.subtitle = [NSString stringWithFormat:@"%@",[subtList objectAtIndex:idx]];
         thumbnail.disclosureBlock = ^{ NSLog(@"municipio"); };
         thumbnail.image = [UIImage imageNamed:[NSString stringWithFormat:@"%@",[thumbs_arr objectAtIndex:idx]]];
-        
+        //2 test
         CLLocationCoordinate2D pinCoordinate;
         thumbnail.coordinate = pinCoordinate;
         pinCoordinate.latitude = [[latitudList objectAtIndex:idx] floatValue];
         pinCoordinate.longitude = [[longitudList objectAtIndex:idx] floatValue];
         [_GSSMapView addAnnotation:[GSSMapAnnotation annotationWithMapThumbnail:thumbnail]];
-        //JORGE
-        //VILLA
-        //KINE
-        //YALI
     }];
 }
 
