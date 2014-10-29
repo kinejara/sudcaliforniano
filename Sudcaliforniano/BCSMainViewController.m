@@ -103,7 +103,7 @@
         thumbnail.coordinate = pinCoordinate;
         
         [_GSSMapView addAnnotation:[GSSMapAnnotation annotationWithMapThumbnail:thumbnail]];
-        
+        //add this comment just to create a conflict
     }];
 }
 
