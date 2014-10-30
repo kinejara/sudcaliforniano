@@ -18,11 +18,11 @@
     
     BCSMainViewController *mainView = [[BCSMainViewController alloc] init];
     
-    UINavigationController *navBar = [[UINavigationController alloc] initWithRootViewController:mainView];
+    UINavigationController *navigationBar = [[UINavigationController alloc] initWithRootViewController:mainView];
     
-    self.window.rootViewController = navBar;
+    self.window.rootViewController = navigationBar;
     [self.window makeKeyAndVisible];
-    int i =0;
+    int i =3;
     return YES;
 }
 							
