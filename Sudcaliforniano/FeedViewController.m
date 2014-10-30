@@ -27,8 +27,7 @@
     return self;
 }
 
-- (id)initWithMunicipioID:(NSNumber*)municipioID {
-    
+- (id)initWithMunicipioID:(NSNumber *)municipioID {
     feedNew = [[FeedNews alloc] init];
     [feedNew setDelegate:self];
     [feedNew getFeedNewsByID:municipioID];
@@ -51,33 +50,22 @@
     if (!loadVerified) {
         return;
     }
-    
     [self.tableView reloadData];
-
 }
-
 
 #pragma mark UITableView delegates
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-    // Return the number of sections.
     return 1;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    // Return the number of rows in the section.
     return [feedNew numberOfFeedsToDisplay];
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
     return 96.0f;
 }
-
-/*
- - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
- return 40;
- }
- */
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     
@@ -98,16 +86,10 @@
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    //[self.navigationController pushViewController:detailViewController animated:YES];
-    //NSIndexPath *selectedRowPath = [self.tableView indexPathForSelectedRow];
     FeedWebViewController *feedWebView = [[FeedWebViewController alloc] initWithNibName:@"FeedWebView" bundle:nil];
     feedWebView.feedString = [NSString stringWithFormat:@"%@",[feedNew FeedContentForRow:indexPath]];
     feedWebView.isHTMLStr = YES;
     [self.navigationController pushViewController:feedWebView animated:YES];
-    
-    //NSLog(@"Selected ---> %@",[feedNew FeedContentForRow:indexPath]);
-    //NSLog(@"Select ---> %ld",(long)indexPath.row);
-
 }
 
 @end
