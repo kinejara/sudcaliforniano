@@ -65,6 +65,7 @@
 		386E20BB19CB7EFD0039F4AD /* RadioView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 386E20B919CB7EFD0039F4AD /* RadioView.xib */; };
 		38899EC619DDC076003E3240 /* municipios.plist in Resources */ = {isa = PBXBuildFile; fileRef = 38899EC519DDC076003E3240 /* municipios.plist */; };
 		38899ECA19DDE92C003E3240 /* ModelView.m in Sources */ = {isa = PBXBuildFile; fileRef = 38899EC919DDE92C003E3240 /* ModelView.m */; };
+		38AEC07F1A02DBF6008F3BB2 /* iOS Simulator Screen Shot Oct 29, 2014, 12.19.05 PM.png in Resources */ = {isa = PBXBuildFile; fileRef = 38AEC07E1A02DBF6008F3BB2 /* iOS Simulator Screen Shot Oct 29, 2014, 12.19.05 PM.png */; };
 		38F662F619D1D38C006AEC58 /* RadioStation.m in Sources */ = {isa = PBXBuildFile; fileRef = 38F662F519D1D38C006AEC58 /* RadioStation.m */; };
 		38F662F919D20047006AEC58 /* FeedNews.m in Sources */ = {isa = PBXBuildFile; fileRef = 38F662F819D20047006AEC58 /* FeedNews.m */; };
 		38F662FD19D203AD006AEC58 /* FeedViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 38F662FB19D203AD006AEC58 /* FeedViewController.m */; };
@@ -200,6 +201,7 @@
 		38899EC519DDC076003E3240 /* municipios.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = municipios.plist; sourceTree = "<group>"; };
 		38899EC819DDE92C003E3240 /* ModelView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ModelView.h; sourceTree = "<group>"; };
 		38899EC919DDE92C003E3240 /* ModelView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ModelView.m; sourceTree = "<group>"; };
+		38AEC07E1A02DBF6008F3BB2 /* iOS Simulator Screen Shot Oct 29, 2014, 12.19.05 PM.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "iOS Simulator Screen Shot Oct 29, 2014, 12.19.05 PM.png"; sourceTree = "<group>"; };
 		38F662F419D1D38C006AEC58 /* RadioStation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RadioStation.h; sourceTree = "<group>"; };
 		38F662F519D1D38C006AEC58 /* RadioStation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RadioStation.m; sourceTree = "<group>"; };
 		38F662F719D20047006AEC58 /* FeedNews.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FeedNews.h; sourceTree = "<group>"; };
@@ -278,6 +280,7 @@
 		3811D43919CB2C9800743C1E = {
 			isa = PBXGroup;
 			children = (
+				38AEC07E1A02DBF6008F3BB2 /* iOS Simulator Screen Shot Oct 29, 2014, 12.19.05 PM.png */,
 				3811D44B19CB2C9800743C1E /* Sudcaliforniano */,
 				3811D46A19CB2C9800743C1E /* SudcalifornianoTests */,
 				3811D44419CB2C9800743C1E /* Frameworks */,
@@ -631,6 +634,7 @@
 				38F6630819D2180C006AEC58 /* FeedWebView.xib in Resources */,
 				38FA6F3419CCC94300ECE3D9 /* FolioCell.xib in Resources */,
 				38FA6F2819CCAE2400ECE3D9 /* icon_cabos.png in Resources */,
+				38AEC07F1A02DBF6008F3BB2 /* iOS Simulator Screen Shot Oct 29, 2014, 12.19.05 PM.png in Resources */,
 				38FA6F3619CCC95500ECE3D9 /* ReservationSummaryCell.xib in Resources */,
 				38FA6F2A19CCC48700ECE3D9 /* icon_lapaz.png in Resources */,
 				38F6630319D20B7E006AEC58 /* FeedCell.xib in Resources */,
