@@ -22,7 +22,7 @@
     
     self.window.rootViewController = navBar;
     [self.window makeKeyAndVisible];
-    int i =0;
+    int i =1;
     return YES;
 }
 							
