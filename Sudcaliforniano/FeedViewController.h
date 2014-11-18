@@ -13,6 +13,6 @@
 
 @property(nonatomic,strong)IBOutlet UITableView *tableView;
 
-- (id)initWithMunicipioID:(NSNumber*)municipioID;
+- (id)initWithMunicipioID:(NSInteger)municipioID;
 
 @end

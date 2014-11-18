@@ -19,7 +19,7 @@
 @interface FeedNews : NSObject <NSXMLParserDelegate>
 @property (nonatomic,weak) id <feedNewsDelegates> delegate;
 
--(NSArray*)getFeedNewsByID:(NSNumber*)municipioID;
+-(NSArray*)getFeedNewsByID:(NSInteger)municipioID;
 
 - (NSInteger)numberOfFeedsToDisplay;
 - (NSString *)FeedTitleForRow:(NSIndexPath *)indexPath;

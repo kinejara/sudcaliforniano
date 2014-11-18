@@ -15,14 +15,11 @@
 {
     
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
-    
     BCSMainViewController *mainView = [[BCSMainViewController alloc] init];
-    
     UINavigationController *navigationBar = [[UINavigationController alloc] initWithRootViewController:mainView];
     
     self.window.rootViewController = navigationBar;
     [self.window makeKeyAndVisible];
-    int i =1;
     return YES;
 }
 							

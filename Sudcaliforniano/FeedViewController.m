@@ -27,7 +27,7 @@
     return self;
 }
 
-- (id)initWithMunicipioID:(NSNumber *)municipioID {
+- (id)initWithMunicipioID:(NSInteger)municipioID {
     feedNew = [[FeedNews alloc] init];
     [feedNew setDelegate:self];
     [feedNew getFeedNewsByID:municipioID];
@@ -80,8 +80,7 @@
     cell = (FeedCell *) [tableView dequeueReusableCellWithIdentifier: customCellIdentifier];
     [cell.labelTitle setText:[feedNew FeedTitleForRow:indexPath]];
     [cell.labelDate setText:[feedNew FeedDateForRow:indexPath]];
-    
-    
+
     return cell;
 }
 

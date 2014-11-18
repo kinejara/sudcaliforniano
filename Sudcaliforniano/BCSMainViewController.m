@@ -104,11 +104,6 @@
     }];
 }
 
--(void)countOne {
-    int i = 1;
-}
-
-
 - (void)customizeNavigationBar {
     UIBarButtonItem *closeButton = [[UIBarButtonItem alloc] initWithTitle:@"X" style:UIBarButtonItemStylePlain target:self action:@selector(pickMunicipio)];
     
@@ -158,8 +153,7 @@
 }
 
 
-- (BOOL) isFirstRun
-{
+- (BOOL)isFirstRun {
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     
     if ([defaults objectForKey:@"isFirstRun"]) {
@@ -179,16 +173,14 @@
 }
 
 - (IBAction)callRadioStation:(id)sender {
-    
     RadioViewController *radioView = [[RadioViewController alloc] initWithMunicipioID:self.municipioID];
     [self.navigationController pushViewController:radioView animated:YES];
-    
 }
 
 - (IBAction)callFeedNew:(id)sender {
     
-    //FeedViewController *radioView = [[FeedViewController alloc] initWithMunicipioID:self.municipioID];
-    //[self.navigationController pushViewController:radioView animated:YES];
+    FeedViewController *radioView = [[FeedViewController alloc] initWithMunicipioID:self.municipioID];
+    [self.navigationController pushViewController:radioView animated:YES];
     
 }
 
@@ -205,7 +197,6 @@
     NSInteger municipioStoreId = [[NSUserDefaults standardUserDefaults] integerForKey:@"municipioID"];
     
     if(municipioIndex != municipioStoreId) {
-        //
         [[NSUserDefaults standardUserDefaults] setInteger:municipioIndex forKey:@"municipioID"];
         [[NSUserDefaults standardUserDefaults] synchronize];
         
@@ -218,7 +209,6 @@
 - (void)textForWeaterLabelbyMunicipioId:(NSInteger)municipioID {
 
     __weak typeof(self) weakSelf = self;
-    
     [self.weather weatherForMunicipioID:municipioID andOnSuccess:^(NSString *weatherUnits) {
         
         weakSelf.temperatureLabel.text = weatherUnits;

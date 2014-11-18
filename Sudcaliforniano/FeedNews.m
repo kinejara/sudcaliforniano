@@ -34,12 +34,12 @@
 }
 
 
--(NSArray*)getFeedNewsByID:(NSNumber*)municipioID {
+-(NSArray*)getFeedNewsByID:(NSInteger)municipioID {
 
 
     NSURL *url = [NSURL URLWithString:@"http://www.bcsnoticias.mx/los-cabos/feed/"];
    
-    switch (municipioID.intValue) {
+    switch (municipioID) {
         case 0:{
             //Los cabos
             url = [NSURL URLWithString:@"http://www.bcsnoticias.mx/los-cabos/feed/"];
