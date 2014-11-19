@@ -40,25 +40,18 @@
 - (id)initWithMunicipioID:(NSInteger)municipioID {
     
     _municipioID = municipioID;
-    
     _radioStation = [[RadioStation alloc] init];
-    
     _halo = [PulsingHaloLayer layer];
     _halo.position = CGPointMake(58, 12);
-    
     _audioController = [[FSAudioController alloc] init];
     _audioStream = [[FSAudioStream alloc] init];
     
     return [self init];
 }
 
-
-- (void)viewDidLoad
-{
+- (void)viewDidLoad {
     [super viewDidLoad];
-    
     self.tableView.rowHeight = 150.0f;
-    
     [self fetchRadioStationsForPreferredMunicipio];
 }
 
@@ -66,7 +59,6 @@
 
     [super viewWillAppear:YES];
     //[[UIApplication sharedApplication] setNetworkActivityIndicatorVisible:YES];
-   
 }
 
 - (void)didReceiveMemoryWarning
@@ -75,20 +67,14 @@
     // Dispose of any resources that can be recreated.
 }
 
-
 - (void)fetchRadioStationsForPreferredMunicipio {
 
     __weak typeof(self) weakSelf = self;
-    
     [self.radioStation radioStationsForMunicipioId:self.municipioID andOnSuccess:^(NSArray *radioStations) {
-       
         self.radioStations = radioStations;
         [weakSelf.tableView reloadData];
-        
     } andOnFailure:^(NSError *error) {
-
     }];
-
 }
 
 /*
@@ -146,20 +132,6 @@
     return self.radioStations.count;
 }
 
-/*
-- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-    
-    return 150.0f;
-}
-
-*/
-
-/*
-- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
-    return 40;
-}
-*/
-
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     
     static NSString* customCellIdentifier = @"ReservationSummaryCell";
@@ -176,18 +148,15 @@
     [cell.logoImg sd_setImageWithURL:[NSURL URLWithString:[self.radioStation radioImgForRow:indexPath]] placeholderImage:[UIImage imageNamed:@""]];
     
     if([[self.radioStation radioWebForRow:indexPath.row] isEqualToString:@""]) {
-    
         [cell.WebButton  setEnabled:NO];
         
     } else {
-    
         [cell.WebButton  setEnabled:YES];
     }
     
     if([[self.radioStation radioTwitterForRow:indexPath.row] isEqualToString:@""]) {
         
         [cell.TwitterButton  setEnabled:NO];
-        
     } else {
         
         [cell.TwitterButton  setEnabled:YES];
@@ -200,7 +169,6 @@
     } else {
         
         [cell.fbButton  setEnabled:YES];
-        
     }
     
     [cell.WebButton  setTag:indexPath.row];
@@ -215,17 +183,14 @@
 }
 
 
--(void)fbButtonTouchUpInside:(UIButton*)sender {
-    
+-(void)fbButtonTouchUpInside:(UIButton *)sender {
     FeedWebViewController *feedWebView = [[FeedWebViewController alloc] init];
     feedWebView.feedString = [NSString stringWithFormat:@"%@",[self.radioStation radioFbForRow:sender.tag]];
     feedWebView.isHTMLStr = NO;
     [self.navigationController pushViewController:feedWebView animated:YES];
-    
 }
 
--(void)twitterButtonTouchUpInside:(UIButton*)sender {
-    
+-(void)twitterButtonTouchUpInside:(UIButton *)sender {
     FeedWebViewController *feedWebView = [[FeedWebViewController alloc] init];
     feedWebView.feedString = [NSString stringWithFormat:@"%@",[self.radioStation radioTwitterForRow:sender.tag]];
     feedWebView.isHTMLStr = NO;
@@ -233,13 +198,12 @@
     
 }
 
--(void)webButtonTouchUpInside:(UIButton*)sender {
+-(void)webButtonTouchUpInside:(UIButton *)sender {
     
     FeedWebViewController *feedWebView = [[FeedWebViewController alloc] init];
     feedWebView.feedString = [NSString stringWithFormat:@"%@",[self.radioStation radioWebForRow:sender.tag]];
     feedWebView.isHTMLStr = NO;
     [self.navigationController pushViewController:feedWebView animated:YES];
-    
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -259,7 +223,6 @@
             [_audioController play];
         }
         else{
-        
             _audioStream.strictContentTypeChecking = NO;
             [_audioStream playFromURL:streamURL];
         }
@@ -268,20 +231,16 @@
         //TODO:Handle stream error here
         UIAlertView *tmp = [[UIAlertView alloc] initWithTitle:@"!" message:@"Esta estación no se encuentra disponible." delegate:nil cancelButtonTitle:@"Ok" otherButtonTitles: nil];
         [tmp show];
-
     };
     
     [request start];
-
     NSLog(@"Selected ---> %@",[self.radioStation radioStreamForRow:indexPath]);
-
 }
 
 - (void)tableView:(UITableView *)tableView didDeselectRowAtIndexPath:(NSIndexPath *)indexPath {
 
     ReservationSummaryCell *cell = (ReservationSummaryCell*)[self.tableView cellForRowAtIndexPath:indexPath];
     [cell.playButton setTitle:@"Play" forState:UIControlStateNormal];
-    
     [cell.layer removeAllAnimations];
     
     [_audioController stop];
