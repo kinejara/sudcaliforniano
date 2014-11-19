@@ -34,7 +34,7 @@
     FSAudioController *_audioController;
     FSAudioStream *_audioStream;
     PulsingHaloLayer *_halo;
-    
+    //YALIYALI
 }
 
 - (id)initWithMunicipioID:(NSInteger)municipioID {
