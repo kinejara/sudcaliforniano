@@ -34,7 +34,7 @@
     FSAudioController *_audioController;
     FSAudioStream *_audioStream;
     PulsingHaloLayer *_halo;
-    
+    //Hi Jorge This is a change
 }
 
 - (id)initWithMunicipioID:(NSInteger)municipioID {
